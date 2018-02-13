@@ -112,7 +112,6 @@ In addition, the sliding window search is repeated for windows of various scales
 
 A shortcut done to reduce computation time is to limit the region that sliding window gets operated on to the bottom half of the image only, where the cars would be found.
 
-![alt text][image3]
 
 
 ### Heatmap 
@@ -140,13 +139,12 @@ Video Implementation
 ---
 
 #### Video Output
-Here's a [link to my video result](./project_video_output.mp4). The pipeline performs reasonably well on the entire project video, but there remain a few unstable bounding boxes around the end. 
+Here's a [link to my video result](./project_video_output.mp4). The pipeline performs reasonably well on the project video, but there remain a few unstable bounding boxes. In one frame, the bounding box disappears momemtarily around the white car. Towards the end, there's also several noisy bounding boxes. 
 
 
 ### False Positive Filtering
 
 Again, false positive filtering is done as explained in the previous section, via the use of Heatmaps. In addition to the aforementioned discussion, the video pipeline introduces an averaging over N heatmaps of the the previous N frames of the video to obtain a smoother bounding box around the vehicles. This averaging also be interpreted a way of false positive filtering, as it attempts to average out any bad detections that may occur.
-
 
 
 
